@@ -44,7 +44,7 @@ public class VigenereCipher
     }
     
     //encrypt a file
-    public static void encrypt(String filename, String keyphrase ,String fileout) throws IOException
+    public static void encrypt(String filename, String key ,String fileout) throws IOException
     {
 	char c;
 	int counter = 0;
@@ -61,10 +61,10 @@ public class VigenereCipher
 		if( c <= 'Z' && c >= 'A')
 		{
                     //Shifts by the letters of the key
-                    c = (char)( (c- 'A' + keyphrase.charAt(counter++)- 'A')%26 + 'A');
+                    c = (char)( (c- 'A' + key.charAt(counter++)- 'A')%26 + 'A');
 							
                     //Tiles the key
-                    counter %= keyphrase.length();
+                    counter %= key.length();
 		}
 		out.print(c);
             }
@@ -75,7 +75,7 @@ public class VigenereCipher
     }
     
     //decrypt a file
-    public static void decrypt(String filename, String keyphrase ,String fileout) throws IOException
+    public static void decrypt(String filename, String key ,String fileout) throws IOException
     {
         char c;
 	int counter = 0;
@@ -87,9 +87,9 @@ public class VigenereCipher
 	{
             if( c <= 'Z' && c >= 'A')
             {
-		c = (char)( (c - keyphrase.charAt(counter++) + 26 )%26 + 'A');
+		c = (char)( (c - key.charAt(counter++) + 26 )%26 + 'A');
 		//Tiles the key
-		counter %= keyphrase.length();
+		counter %= key.length();
             }
             out.print(c);
 	}
