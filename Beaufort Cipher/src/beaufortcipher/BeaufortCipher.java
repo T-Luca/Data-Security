@@ -10,9 +10,9 @@ public class BeaufortCipher {
         
         // read input plaintext from file
         FileReader plaintextFile = new FileReader("plaintext.txt");
-	  BufferedReader readPlaintextFile = new BufferedReader(plaintextFile);
-	  String phrase = readPlaintextFile.readLine();
-	  readPlaintextFile.close();
+	 BufferedReader readPlaintextFile = new BufferedReader(plaintextFile);
+	 String phrase = readPlaintextFile.readLine();
+	 readPlaintextFile.close();
         
         String enc=encrypt(phrase, key);
         System.out.println("Beaufort Cipher");
@@ -43,9 +43,9 @@ public class BeaufortCipher {
             encryption+=shiftedChar;
         }
         FileWriter writeCipher = new FileWriter("ciphertext.txt");
-	  BufferedWriter s = new BufferedWriter(writeCipher);
-	  s.write(encryption);
-	  s.close();
+	 BufferedWriter s = new BufferedWriter(writeCipher);
+	 s.write(encryption);
+	 s.close();
         return encryption;
     }
 	
