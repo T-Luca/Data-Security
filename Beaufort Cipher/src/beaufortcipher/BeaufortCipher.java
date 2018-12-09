@@ -1,18 +1,26 @@
 package beaufortcipher;
 
+import java.io.*;
+
 public class BeaufortCipher {
 
-    public static void main(String[] args)
+    public static void main(String[] args) throws IOException
     {
         String key="fortification";
-        String phrase="defend the east wall of the castle";
+        
+        // read input plaintext from file
+        FileReader plaintextFile = new FileReader("plaintext.txt");
+	BufferedReader readPlaintextFile = new BufferedReader(plaintextFile);
+	String phrase = readPlaintextFile.readLine();
+	readPlaintextFile.close();
+        
         String enc=encrypt(phrase, key);
         System.out.println("Beaufort Cipher");
         System.out.println("Ciphertext: " + enc);
         System.out.println("Plaintext:  " + decrypt(enc, key));
     }
     
-    public static String encrypt(String p, String c)
+    public static String encrypt(String p, String c) throws IOException
     {
         String phrase=p.toUpperCase();
         String key=c.toUpperCase();
@@ -34,6 +42,10 @@ public class BeaufortCipher {
             String shiftedChar=Character.toString((char)cypher);
             encryption+=shiftedChar;
         }
+        FileWriter writeCipher = new FileWriter("ciphertext.txt");
+	BufferedWriter s = new BufferedWriter(writeCipher);
+	s.write(encryption);
+	s.close();
         return encryption;
     }
 	
