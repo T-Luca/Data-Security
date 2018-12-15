@@ -132,9 +132,9 @@ public class FourSquareCipher {
             plaintext.append(ALPHABET_SQUARE[xSecond][yFirst]).append(ALPHABET_SQUARE[xFirst][ySecond]);
         }
         FileWriter writeCipher = new FileWriter("ciphertext.txt");
-		BufferedWriter c = new BufferedWriter(writeCipher);
-		c.write(ciphertext);
-		c.close();
+	 BufferedWriter c = new BufferedWriter(writeCipher);
+	 c.write(ciphertext);
+	 c.close();
         return plaintext.toString();
     }
 
@@ -142,11 +142,11 @@ public class FourSquareCipher {
         String key1 = "EXAMPLE";
         String key2 = "KEYWORD";
         
-		// read input plaintext from file
-		FileReader plaintextFile = new FileReader("plaintext.txt");
-		BufferedReader readPlaintextFile = new BufferedReader(plaintextFile);
-		String plaintext = readPlaintextFile.readLine();
-		readPlaintextFile.close();
+	 // read input plaintext from file
+	 FileReader plaintextFile = new FileReader("plaintext.txt");
+	 BufferedReader readPlaintextFile = new BufferedReader(plaintextFile);
+	 String plaintext = readPlaintextFile.readLine();
+	 readPlaintextFile.close();
         
         String ciphertext = encrypt(plaintext,key1,key2);
         System.out.println("Ciphertext: " + ciphertext);
