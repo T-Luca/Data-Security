@@ -69,9 +69,9 @@ public class ColumnarTransposition
             }
         }
         FileWriter writeCipher = new FileWriter("ciphertext.txt");
-	  BufferedWriter c = new BufferedWriter(writeCipher);
-	  c.write(cipText);
-	  c.close();
+	 BufferedWriter c = new BufferedWriter(writeCipher);
+	 c.write(cipText);
+	 c.close();
         return cipText;
     }
 
@@ -107,11 +107,11 @@ public class ColumnarTransposition
         System.out.print("Columnar Transposition Cipher  \n");
         
         FileReader plaintextFile = new FileReader("plaintext.txt");
-	  BufferedReader input = new BufferedReader(plaintextFile);
-	  String plaintext = input.readLine();
-	  input.close();
+	 BufferedReader input = new BufferedReader(plaintextFile);
+	 String plaintext = input.readLine();
+	 input.close();
 			
-	  String inKey = "ADRIAN";
+	 String inKey = "ADRIAN";
         
         String ct = CC.encrypt(plaintext, inKey);
         System.out.println("Encrypted text:  " + ct);
