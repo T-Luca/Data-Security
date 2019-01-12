@@ -75,6 +75,7 @@ public class TrifidCipher {
 	}
 
 
+	
 	public String decipher(String userInput, String key, int keyS) {
 		int keySize = keyS;
 
@@ -85,8 +86,6 @@ public class TrifidCipher {
 			if(i == 3){break;}
 			keySquareFirst[i][y][x] = key.charAt(index);
 		}
-
-
 
 		ArrayList<Integer> listOneLetter = new ArrayList<>();
 		HashMap<Integer, ArrayList<Integer>> mapAllText = new HashMap<>();
@@ -103,7 +102,6 @@ public class TrifidCipher {
 			}
 		}
 
-
 		ArrayList<Integer> listSecond = new ArrayList<>();
 		for (int i = 0; i < mapAllText.size(); i++){
             listSecond.add(mapAllText.get(i).get(0));
@@ -112,7 +110,6 @@ public class TrifidCipher {
 		}
 
 		System.out.println(listSecond); 
-
 
 		ArrayList<Integer> listOneLetterSecond = new ArrayList<>();
 		StringBuilder decipherText = new StringBuilder();
